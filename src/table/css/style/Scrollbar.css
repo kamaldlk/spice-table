@@ -1,0 +1,22 @@
+
+.public_Scrollbar_main.public_Scrollbar_mainActive,
+.public_Scrollbar_main {
+  background-color: var(--scrollbar-track-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.public_Scrollbar_mainOpaque,
+.public_Scrollbar_mainOpaque.public_Scrollbar_mainActive,
+.public_Scrollbar_mainOpaque:hover {
+  background-color: var(--fbui-white);
+}
+
+.public_Scrollbar_face:after {
+  background-color: var(--scrollbar-face-color);
+}
+
+.public_Scrollbar_main:hover .public_Scrollbar_face:after,
+.public_Scrollbar_mainActive .public_Scrollbar_face:after,
+.public_Scrollbar_faceActive:after {
+  background-color: var(--scrollbar-face-active-color);
+}

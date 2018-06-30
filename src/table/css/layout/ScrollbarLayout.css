@@ -1,0 +1,84 @@
+
+
+.ScrollbarLayout_main {
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  user-select: none;
+}
+
+.ScrollbarLayout_mainVertical {
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: var(--scrollbar-size);
+}
+
+.ScrollbarLayout_mainHorizontal {
+  bottom: 0;
+  height: var(--scrollbar-size);
+  left: 0;
+  transition-property: background-color height;
+}
+
+.ScrollbarLayout_mainHorizontal.public_Scrollbar_mainActive,
+.ScrollbarLayout_mainHorizontal:hover {
+  height: var(--scrollbar-size-large);
+}
+
+.ScrollbarLayout_face {
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-property: background-color width position;
+}
+
+
+.ScrollbarLayout_face:after {
+  border-radius: var(--scrollbar-face-radius);
+  content: '';
+  display: block;
+  position: absolute;
+  transition: background-color 250ms ease;
+}
+
+.ScrollbarLayout_faceHorizontal {
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.ScrollbarLayout_faceHorizontal:after {
+  bottom: var(--scrollbar-face-margin);
+  left: 0;
+  top: var(--scrollbar-face-margin);
+  width: 100%;
+}
+
+.ScrollbarLayout_faceHorizontal.public_Scrollbar_faceActive:after,
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceHorizontal:after {
+  bottom: calc(var(--scrollbar-face-margin)/2);
+}
+
+.ScrollbarLayout_faceVertical {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.ScrollbarLayout_faceVertical:after {
+  height: 100%;
+  left: var(--scrollbar-face-margin);
+  right: var(--scrollbar-face-margin);
+  top: 0;
+}
+
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceVertical:after,
+.ScrollbarLayout_faceVertical.public_Scrollbar_faceActive:after {
+  left: calc(var(--scrollbar-face-margin)/2);
+  right: calc(var(--scrollbar-face-margin)/2);
+}
